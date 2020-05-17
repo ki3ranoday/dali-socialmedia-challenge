@@ -5,10 +5,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware, compose } from 'redux'
+import reduxThunk from 'redux-thunk'
+import { BrowserRouter } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import reducers from './reducers'
+
+
+export const store = createStore(reducers, {}, compose(
+  applyMiddleware(reduxThunk),
+  window.devToolsExtension ? window.devToolsExtension() : f => f));
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 

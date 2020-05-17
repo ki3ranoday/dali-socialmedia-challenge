@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.mobile_view {
+  width: 90vw;
+  max-width: 700px;
+  min-height: 100vh;
+  margin: auto;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.link {
+  color: blue;
+}
+.link:hover{
+  color: skyblue;
+  cursor: pointer;
+}
