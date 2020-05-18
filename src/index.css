@@ -1,3 +1,8 @@
+:root{
+  --theme_orng:rgb(211,88,69);
+  --theme_blue: rgb(25,76,136);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -31,10 +36,10 @@ code {
 }
 
 .link {
-  color: blue;
+  color: var(--theme_orng);
 }
 .link:hover{
-  color: skyblue;
+  color: var(--theme_blue);
   cursor: pointer;
 }
 
@@ -59,10 +64,40 @@ code {
   position: absolute;
   right: 10px;
   top: 0px;
-  color: rgb(211,88,69)
+  color: var(--theme_orng)
 }
 .navprof:hover{ 
   cursor:pointer;
-  color: rgb(25,76,136);
+  color: var(--theme_blue);
   transition: .5s;
+}
+
+.postbox {
+  width: 80%;
+  height: 100px;
+  margin: auto;
+  border-radius: 7px;
+  border-color: var(--theme_blue);
+}
+
+.postbox:focus {
+  outline: none;
+}
+
+.post {
+  width: 80%;
+  margin: auto;
+  padding: 15px;
+  background-image: linear-gradient(var(--theme_blue), var(--theme_orng));
+  color: white !important;
+  border: none;
+  border-radius: 7px;
+}
+.postlink {
+  color: white;
+}
+.postlink:hover{
+  cursor: pointer;
+  color: lightgray;
+  text-decoration: none;
 }
