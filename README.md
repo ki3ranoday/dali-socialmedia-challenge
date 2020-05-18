@@ -1,3 +1,5 @@
+This is a simple social media app built for the Dali Lab application process. I am designing a frontend for an app similar to Librex or Unmasked, except not anonymous. Users will be able to write posts, and comment on other peoples' posts. For the purpose of this challenge, I am not going to focus on an authorization flow to log into the app, so to log in you will just enter your full name as it is in the provided JSON of users. If you are already a Dali Member, your information should already be in the app already. If not, you will be prompted to create a new account. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
