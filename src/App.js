@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router-dom'
 import { fetchUsers, fetchPosts } from './actions'
 
-import  CreateUserPage from './components/CreateUserPage';
 import  LogInPage  from './components/LogInPage';
 import  ProfilePage from './components/ProfilePage';
 import  PostsPage  from './components/PostsPage';

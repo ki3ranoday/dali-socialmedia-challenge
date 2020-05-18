@@ -53,14 +53,14 @@ export const createUser = (user) => async dispatch => {
     usersRef.push(user)
     return dispatch({
         type: LOGIN,
-        payload: user
+        payload: user['name']
     })
 }
 
-export const login = (user) => async dispatch => {
+export const login = (username) => async dispatch => {
     return dispatch({
         type: LOGIN,
-        payload: user
+        payload: username
     })
 }
 

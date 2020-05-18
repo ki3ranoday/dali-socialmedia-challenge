@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import {startCreateUser, login} from '../actions'
+import CreateUserPage from './CreateUserPage'
 
 class LogInPage extends Component {
     constructor(props) {
         super(props)
         this.state = {
             name: '',
-            error: ''
+            error: '',
         }
     }
     render() {
@@ -16,7 +17,7 @@ class LogInPage extends Component {
             <div className='mobile_view'>
                 <div className='centered'>
                     {this.props.current_user && this.props.current_user.creating ?
-                        <div>huh</div>
+                        <CreateUserPage name={this.state.name}/>
                         :
                         <div>
                             <h4>Welcome to the Dali Social Media App</h4>
@@ -48,7 +49,7 @@ class LogInPage extends Component {
     onSubmit = (event) => {
         event.preventDefault()
         console.log(this.props)
-        const user = this.props.users.filter(user => user['name'] == this.state.name)
+        const user = Object.keys(this.props.users).filter(key => this.props.users[key]['name'] == this.state.name)
         if (user.length == 0) {
             this.setState({ error: "Looks like you don't have an account, want to create one?" })
         }else{
