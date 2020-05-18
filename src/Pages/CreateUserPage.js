@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { storage } from '../firebase'
-import { createUser } from '../actions'
+import { createUser, cancleCreateUser } from '../actions'
 
 export class CreateUserPage extends Component {
     constructor(props) {
@@ -257,7 +257,9 @@ export class CreateUserPage extends Component {
                         </div>
                 </div>
 
+                <input type='button' value='Cancle' onClick={() => this.props.cancleCreateUser()}/> &nbsp;
                 <input type='submit' onClick={this.handleSubmit} />
+                <br/><br/><br/>
             </div>
         )
     }
@@ -322,4 +324,4 @@ export class CreateUserPage extends Component {
 }
 
 
-export default connect(null, {createUser})(CreateUserPage)
+export default connect(null, {createUser, cancleCreateUser})(CreateUserPage)
