@@ -31,7 +31,11 @@ export const createPost = (post) => async dispatch => {
 }
 
 export const comment = (postId, comment) => async dispatch => {
-    postsRef.child(postId).child("comments").push(comment) //needs to be an object with the postid/'comments' and then the list of comments including the new one
+    postsRef.child(postId).child("comments").push(comment)
+}
+
+export const likeUnlike = (updates) => async dispatch => {
+    postsRef.update(updates)
 }
 
 //changes the state of the current user to creating:true (which will bring up the create user form)
