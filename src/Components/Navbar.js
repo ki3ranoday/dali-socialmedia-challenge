@@ -8,7 +8,7 @@ class Navbar extends Component {
         return (
             <div className='nav'>
                 <Link to='/'><img className='navhome' src={logo} /></Link>
-                <Link to={`profile/${this.props.current_user.user}`} className='navprof'><span className='fa fa-user'></span></Link>
+                <Link to={`/profile/${this.props.current_user.user}`} className='navprof'><span className='fa fa-user'></span></Link>
             </div>
         )
     }

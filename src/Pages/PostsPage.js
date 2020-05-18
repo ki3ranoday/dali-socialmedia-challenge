@@ -14,7 +14,7 @@ export class PostsPage extends Component {
     render() {
         return (
             <div className='mobile_view'>
-                <form className='text-center' style={{marginBottom: '30px'}} onSubmit={this.handleSubmit}>
+                <form className='text-center' style={{ marginBottom: '15px' }} onSubmit={this.handleSubmit}>
                     <textarea
                         className='postbox'
                         type='text'
@@ -23,22 +23,23 @@ export class PostsPage extends Component {
                         value={this.state.posttext}
                         onChange={this.onChange}
                     />
-                    <br/>
+                    <br />
                     <input type='submit' value='Post'></input>
                 </form>
                 {this.props.posts ?
                     Object.keys(this.props.posts).map(key => {
                         const post = this.props.posts[key]
-                        console.log(post)
                         const user = this.props.users[post.user]
                         return (
                             <div className='post'>
-                                <Link className='postlink' to='/posts/key'>
+                                <Link className='postlink' to={`/posts/${key}`}>
                                     <p>{post['text']}</p>
                                 </Link>
                                 <div className='row'>
                                     <p className='col text-left'>{post['time']}</p>
-                                    <p className='col text-right'>{user? user['name'] : post['user']}</p>
+                                    <Link className='postlink' to={`/profile/${post.user}`}>
+                                        <p className='col text-right'>{user ? user['name'] : null}</p>
+                                    </Link>
                                 </div>
                             </div>
                         )
@@ -57,15 +58,15 @@ export class PostsPage extends Component {
     };
     handleSubmit = (event) => {
         event.preventDefault()
-        if(this.state.posttext){
+        if (this.state.posttext) {
             const now = new Date();
             const post = {
                 'text': this.state.posttext,
-                'time': now.toLocaleDateString('en-US', {  
-                    day : '2-digit',
-                    month : 'short',
-                    minute : 'numeric',
-                    hour : 'numeric'
+                'time': now.toLocaleDateString('en-US', {
+                    day: '2-digit',
+                    month: 'short',
+                    minute: 'numeric',
+                    hour: 'numeric'
                 }),
                 'user': this.props.current_user['user']
             }

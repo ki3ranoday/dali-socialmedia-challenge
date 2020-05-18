@@ -50,10 +50,10 @@ export const cancleCreateUser = () => async dispatch => {
 }
 
 export const createUser = (user) => async dispatch => {
-    usersRef.push(user)
+    const newUserRef = usersRef.push(user)
     return dispatch({
         type: LOGIN,
-        payload: user['name']
+        payload: newUserRef.key
     })
 }
 
