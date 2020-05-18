@@ -25,7 +25,7 @@ class App extends Component {
             <Switch>
               <Route path='/profile/:id' component={ProfilePage} />
               <Route exact path='/posts' component={PostsPage} />
-              <Route path='/posts/:id' component={PostPage} />
+              <Route path='/posts/:key' component={PostPage} />
               <Route component={PostsPage} />
             </Switch>
           </div>

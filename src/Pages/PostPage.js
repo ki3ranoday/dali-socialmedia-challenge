@@ -1,22 +1,16 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import Post from '../Components/Post'
+import { Link } from 'react-router-dom'
 
-export class PostPage extends Component {
+export default class PostPage extends Component {
     render() {
         return (
             <div>
-                
+                <Link to='/' className='link'>
+                    <span className='fa fa-arrow-left ' style={{ fontSize: '25px' }} />
+                </Link>
+                <Post postkey={this.props.match.params.key} details={true} />
             </div>
         )
     }
 }
-
-const mapStateToProps = (state) => ({
-    
-})
-
-const mapDispatchToProps = {
-    
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(PostPage)
