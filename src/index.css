@@ -23,6 +23,7 @@ code {
   max-width: 600px;
   min-height: 100vh;
   margin: auto;
+  position: relative;
 }
 
 .centered {
@@ -150,4 +151,13 @@ textarea:focus {
   right: 40%;
   margin: 0;
   z-index: 99;
+}
+
+.profile-pic {
+  width: 125px;
+  height: 125px;
+  border-radius: 62.5px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
