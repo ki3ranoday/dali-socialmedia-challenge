@@ -3,7 +3,7 @@ import { FETCH_USERS, FETCH_POSTS, LOGIN, LOGOUT, CHANGE_CREATE_STATE } from "..
 const initialUser = {
     loggedIn: false,
     creating: false,
-    userkey: null
+    user: null
 }
 const initialState = {
     users: [],
